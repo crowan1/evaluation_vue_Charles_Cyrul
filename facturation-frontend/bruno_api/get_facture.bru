@@ -1,11 +1,202 @@
+# Collection Bruno - API Factures
+
+## 1. GET Toutes les factures
 meta {
-  name: get_facture
+  name: get_all_factures
   type: http
   seq: 1
 }
 
 get {
   url: http://localhost:3001/api/factures
+  body: none
+  auth: inherit
+}
+
+## 2. GET Une facture par ID
+meta {
+  name: get_facture_by_id
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:3001/api/factures/f1
+  body: none
+  auth: inherit
+}
+
+## 3. POST Créer une nouvelle facture
+meta {
+  name: create_facture
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3001/api/factures
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "clientId": "c1",
+    "dateEmission": "2025-06-06",
+    "dateEcheance": "2025-07-06",
+    "statut": "en_attente",
+    "articles": [
+      {
+        "id": "a1",
+        "designation": "Développement application mobile",
+        "quantite": 1,
+        "prixUnitaire": 2500.00,
+        "montant": 2500.00
+      },
+      {
+        "id": "a2",
+        "designation": "Tests et déploiement",
+        "quantite": 1,
+        "prixUnitaire": 500.00,
+        "montant": 500.00
+      }
+    ],
+    "notes": "Application mobile complète avec backend"
+  }
+}
+
+## 4. PUT Modifier une facture
+meta {
+  name: update_facture
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:3001/api/factures/f1
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "numero": "FAC-2024-00122-MODIFIEE",
+    "statut": "payee",
+    "notes": "Facture payée le 06/06/2025"
+  }
+}
+
+## 5. DELETE Supprimer une facture
+meta {
+  name: delete_facture
+  type: http
+  seq: 5
+}
+
+delete {
+  url: http://localhost:3001/api/factures/f3
+  body: none
+  auth: inherit
+}
+
+## 6. GET Tous les clients
+meta {
+  name: get_all_clients
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:3001/api/clients
+  body: none
+  auth: inherit
+}
+
+## 7. GET Un client par ID
+meta {
+  name: get_client_by_id
+  type: http
+  seq: 7
+}
+
+get {
+  url: http://localhost:3001/api/clients/c1
+  body: none
+  auth: inherit
+}
+
+## 8. POST Créer un nouveau client
+meta {
+  name: create_client
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:3001/api/clients
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nom": "Digital Agency SARL",
+    "email": "contact@digital-agency.fr",
+    "telephone": "05 12 34 56 78",
+    "siret": "12345678901234",
+    "adresse": {
+      "rue": "15 Avenue de l'Innovation",
+      "ville": "Bordeaux",
+      "codePostal": "33000",
+      "pays": "France"
+    },
+    "statut": "actif"
+  }
+}
+
+## 9. PUT Modifier un client
+meta {
+  name: update_client
+  type: http
+  seq: 9
+}
+
+put {
+  url: http://localhost:3001/api/clients/c1
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "nouveau-email@techcorp.fr",
+    "telephone": "01 99 88 77 66",
+    "statut": "actif"
+  }
+}
+
+## 10. DELETE Supprimer un client
+meta {
+  name: delete_client
+  type: http
+  seq: 10
+}
+
+delete {
+  url: http://localhost:3001/api/clients/c3
+  body: none
+  auth: inherit
+}
+
+## 11. GET Route de base (info API)
+meta {
+  name: get_api_info
+  type: http
+  seq: 11
+}
+
+get {
+  url: http://localhost:3001/
   body: none
   auth: inherit
 }
