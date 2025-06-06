@@ -1,0 +1,53 @@
+[
+  {
+    "id": "f1",
+    "numero": "FAC-2024-00122",
+    "clientId": "c3",
+    "dateEmission": "2024-01-15",
+    "dateEcheance": "2024-02-14",
+    "statut": "en_attente",
+    "montantHT": 900,
+    "tva": 180,
+    "montantTTC": 1080,
+    "articles": [
+      {
+        "id": "a1",
+        "designation": "Étude graphique UX",
+        "quantite": 2,
+        "prixUnitaire": 450,
+        "montant": 900
+      }
+    ],
+    "notes": "Développement complet du site vitrine",
+    "description": ""
+  },
+  {
+    "id": "5345faeb-5349-41c6-ad39-b42f9bb4ff2e",
+    "numero": "FAC-2025-440",
+    "description": "",
+    "clientId": "59ff258d-b186-4c26-a169-45aa0326c03e",
+    "dateEmission": "2025-06-06",
+    "notes": "",
+    "dateEcheance": "2025-07-06",
+    "articles": [
+      {
+        "id": "a1749220989440",
+        "designation": "errerer",
+        "quantite": 12,
+        "prixUnitaire": 200,
+        "montant": 2400
+      },
+      {
+        "id": "a1749221116726",
+        "designation": "eee",
+        "quantite": 12,
+        "prixUnitaire": 340,
+        "montant": 4080
+      }
+    ],
+    "montantHT": 6480,
+    "tva": 1296,
+    "montantTTC": 7776,
+    "statut": "en_attente"
+  }
+]
